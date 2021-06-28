@@ -1,23 +1,16 @@
 #include "difference_of_squares.h"
 
 namespace difference_of_squares {
-	int square_of_sum(int value) {
-		int sum = 0;
-		for (int i = 0; i <= value; i++) {
-			sum += i;
-		}
-		return (int)pow(sum, 2);
+	int square_of_sum(int N) {		
+		return (int)pow(N * (N + 1) / 2, 2);
 	}
 
-	int sum_of_squares(int value) {
-		int sum = 0;
-		for (int i = 0; i <= value; i++) {
-			sum += pow(i,2);
-		}
-		return sum;
+	//Sum of square of 1 to N = (2 * N + 1) * (N + 1) * N / 6
+	int sum_of_squares(int N) {		
+		return (int)((2 * N + 1) * (N + 1) * N / 6);
 	}
 
-	int difference(int value) {
-		return square_of_sum(value) - sum_of_squares(value);
+	int difference(int N) {
+		return square_of_sum(N) - sum_of_squares(N);
 	}
 }  // namespace difference_of_squares
